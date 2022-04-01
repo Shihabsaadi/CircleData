@@ -20,8 +20,6 @@ var files = new List<CircleData.File>
     new CircleData.File {Name="1",Type="jpg"},
     new CircleData.File {Name="John",Type="jpeg"},
 };
-var dynamic = new List<dynamic>();
-dynamic row = new ExpandoObject();
 var results = new List<ResultView>();
 foreach (var emp in employees)
 {
