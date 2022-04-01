@@ -1,0 +1,14 @@
+﻿select a.Name,a.Category,
+ CASE
+    WHEN a.Category < 3 THEN 'Failed'
+	ELSE 'Passed' END AS Result
+from
+ (Select Name, CASE
+    WHEN Score > 0  and Score<30 THEN 1
+    WHEN Score > 31  and Score<45 THEN 2
+	WHEN Score > 46  and Score<65 THEN 3
+	WHEN Score > 66  and Score<85 THEN 4
+	WHEN Score > 86  THEN 5
+	END AS Category  
+from Students)  a
+Order By a.Category Desc
